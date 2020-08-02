@@ -1,0 +1,52 @@
+Question:
+---------------------------------------------------------------------------
+Declare an array that is used to store all the high temperatures of
+this week. Instantiate an array that is used to store all the high
+temperatures of this week. Loop up at least 7 times, so your program
+can ask the user to enter the 7 high temperature of the week.
+a. Ask the user to enter the high temperature and store each
+temperature in your array.
+b. If the user enters a temperature below absolute zero, then
+display an error message and keep looping. You might need to
+adjust the counter (index) in your for-loop, so you can repeat
+the same counter (index).
+c. Finally display all the high temperatures in your array and also
+display the average of the high temperatures. 
+-----------------------------------------------------------------------------
+
+Solution :
+-----------------------------------------------------------------------------
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    int[] max_temp_week = new int[7];       //creating an array to store temp of 7 days of week
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("Submitted by 18BIT0098");
+	    for(int i=0;i<7;)           //loop to input temp
+	    {
+	        System.out.println("Enter the Highest Temperature recorded for Day "+(i+1));
+	        int max_temp = sc.nextInt();
+	        if(max_temp>0)          //checking if inpput temp<0, ask user to input again
+	        {
+	            max_temp_week[i] = max_temp;
+	            i+=1;           //counter to input and check temp of days
+	        }
+	        else{
+	            System.out.println("*********************************************");
+	            System.out.println("You living in ALASKA?? Enter highest temperature greater than 0\n");
+	            System.out.println("Please enter the temperature for Day "+(i+1)+" AGAIN!!\n ");
+	            System.out.println("*********************************************");
+	        }
+	    }
+	    int temp_sum=0;
+	    System.out.println("-------------------------------------------\n");
+	    for(int i=0;i<7;i++){
+	   temp_sum+=max_temp_week[i];
+	    System.out.println("The highest temperature recorded for day "+(i+1)+" is "+max_temp_week[i]);    
+	    }
+	    System.out.println("-------------------------------------------\nThe average of highest temp for the week is "+temp_sum/7);
+	}
+}
+   
