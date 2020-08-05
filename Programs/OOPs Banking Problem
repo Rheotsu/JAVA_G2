@@ -1,0 +1,80 @@
+Question:
+Write a program to design a class to represent a bank
+account. Include the following members.
+Date members
+a. Name of depositor
+b. Account Number
+c. Type of account
+d. Balance account in the account
+Methods:
+e. To assign initial values
+f. To deposit an account
+g. To withdraw an account after checking balance.
+h. To display the name and balance 
+------------------------------------------------------------------------------------
+Solution:
+//Banking, submitted by 18BIT0098
+import java.util.Scanner;
+class salman_khan_bank {
+    //declaring data memebers
+    int acno;
+    String customer;
+    float bal=0;
+    char ac_type;
+    Scanner get = new Scanner(System.in);
+    //method to input basic customer details 
+    void inputdetails()
+    {
+        System.out.println("Welcome to !!Salman Khan Bank!!\n---------------------\n");
+        System.out.println("Enter your name please!!...");
+        customer = get.nextLine();
+        System.out.println("Enter your account type...\nFor Saving type S\nFor Current type 'C'");
+        ac_type = get.next().charAt(0);
+        System.out.println("Enter your Account Number please...");
+        acno = get.nextInt();
+        System.out.println("Enter your Present Balance...");
+        bal = get.nextFloat();        
+    }
+    //Method to deposit money in the bank
+    void deposit_money()
+    {
+        float amount;
+        System.out.println("Enter the Money to be Deposited...");
+        amount = get.nextFloat();
+        bal = bal+amount;
+        System.out.println("Congratulations! Your account is credited with "+amount+"\nnow available balance is "+ bal);
+    }
+    //method to withdraw money
+    void withdraw_money()
+    {
+        float amount;
+        System.out.println("Enter the Amount to be Withdrawn...");
+        amount = get.nextFloat();
+        if(amount<bal)
+        {
+            bal = bal-amount;
+            System.out.println("Sucess!! You have withdrawn "+amount+" from your account. Now availabe balance is..."+bal);
+        }
+        else
+        {
+            System.out.println("Insufficient funds!!");
+        }
+    }
+    //method to display the details about the customer
+    void display_details()
+    {
+        System.out.println("Name of Customer is...."+customer);
+        System.out.println("Your Availaible balance..."+bal);
+    }
+}
+ //driver class to create objects and run program
+public class Bank {
+    public static void main()
+    {
+       salman_khan_bank cs1 = new salman_khan_bank();
+       cs1.inputdetails();
+        cs1.deposit_money();
+        cs1.withdraw_money();  
+        cs1.display_details();
+    }
+}
