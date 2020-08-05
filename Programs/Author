@@ -1,0 +1,53 @@
+Question:
+ Write a Java class Author with following features:
+Fields
+ firstName for the author’s first name of type String.
+ lastName for the author’s last name of type String.
+Methods:
+ public void setFirstName (String firstName): Used to
+set the first name of author.
+ public void setLastName (String lastName): Used to set
+the last name of author. o public String getFirstName():
+This method returns the first name of the author.
+ public String getLastName(): This method returns the
+last name of the author.
+ Add main program to test the class Author. 
+ ----------------------------------------------------------
+ Solution:
+import java.util.*;
+class Author
+{
+    String fName;
+    String lName;
+ Scanner sc = new Scanner(System.in);
+    public void setFirstName(String firstName)    {
+               fName = firstName;
+    }
+    public void setLastName(String lastName)    {
+             lName = lastName;
+    }
+    public String getFirstName()    {
+             return fName;
+    }
+    public String getLastName()    {
+        return lName;
+    }
+}
+public class Main{
+    public static void main(String[] args)
+    {
+        String firstName;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first name of the author");
+        firstName = sc.nextLine();
+    String lastName;
+    System.out.println("Enter the last name of the author");
+        lastName = sc.nextLine();
+    Author a1 = new Author();
+    a1.setFirstName(firstName);
+    a1.setLastName(lastName);
+    String firname = a1.getFirstName();
+    String lasname = a1.getLastName();
+    System.out.println("Author's first name is "+firname+" and last name is "+lasname);
+}
+}
