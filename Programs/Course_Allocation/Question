@@ -1,0 +1,26 @@
+Question:
+
+The table mentioned above contains the course codes of courses that are to be offered in
+the next semester. A faculty can give 5 preferences from within the list for course
+allocation. Get the preferences through command line arguments. If a faculty fails to give
+his/her preferences, then the Time table committee may fill the preferences by choosing
+any 5 courses randomly from the list. If a faculty gives less than 5 preferences, the left
+out ones will be filled randomly. Write a program to implement the same and print the 5
+preferences at last.
+
+[Hint: Generate 5 random numbers within the range 0-35 as there are a total of 36
+courses in the table. Use the generated random number to find out the row number and
+column number of the table to choose the course. Example: if the generated number is
+17, row number=17/6=2 and column number=17%6=5.
+Therefore the course ITE1006 should be used for filling.]
+
+If a faculty gives less than 5 preferences, fill the left out ones with courses
+corresponding to generated random numbers only if that course belongs to a row from
+which no preference has been given yet. Else regenerate the random numbers. For
+example, if the filled courses are ITA1003 and SWE2002, the remaining 3 preferences
+should not be filled from 0th and 5th rows. 
+
+[Hint: To generate random number int max = 35; int min
+= 0; int range = max - min + 1;
+rand = (int)(Math.random() * range) + min;
+System.out.println("Random number generated is " + rand); ]
